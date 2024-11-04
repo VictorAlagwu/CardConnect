@@ -3,24 +3,23 @@
 namespace Tests\Feature;
 
 use PHPUnit\Framework\Attributes\Test;
-use Victor\CardConnect\CardPointe;
-use Victor\CardConnect\Requests\AuthorizationRequest;
-use Victor\CardConnect\Responses\AuthorizationResponse;
-use Victor\CardConnect\Responses\CaptureResponse;
-use Victor\CardConnect\Responses\InquireResponse;
-use Victor\CardConnect\Responses\SettlementTransaction;
-use Victor\CardConnect\Responses\VoidResponse;
 use PHPUnit\Framework\TestCase;
+use VictorAlagwu\CardConnect\CardPointe;
+use VictorAlagwu\CardConnect\Requests\AuthorizationRequest;
+use VictorAlagwu\CardConnect\Responses\AuthorizationResponse;
+use VictorAlagwu\CardConnect\Responses\CaptureResponse;
+use VictorAlagwu\CardConnect\Responses\InquireResponse;
+use VictorAlagwu\CardConnect\Responses\SettlementTransaction;
+use VictorAlagwu\CardConnect\Responses\VoidResponse;
 
 class CardPointeTest extends TestCase
 {
-    const MERCHANT = '496160873888';
-    const USER     = 'testing';
-    const PASS     = 'testing123';
-    const SERVER   = 'https://fts-uat.cardconnect.com/';
+    public const MERCHANT = '496160873888';
+    public const USER     = 'testing';
+    public const PASS     = 'testing123';
+    public const SERVER   = 'https://fts-uat.cardconnect.com/';
 
-
-    private  CardPointe $client;
+    private CardPointe $client;
 
     protected function setUp(): void
     {
@@ -36,13 +35,12 @@ class CardPointeTest extends TestCase
 
     public function log($text)
     {
-        fwrite(STDERR, $text . "\n");
+        fwrite(STDERR, $text."\n");
     }
 
     /**
      * Tests.
      */
-
     #[Test]
     public function detectsValidCredentials()
     {
@@ -106,7 +104,7 @@ class CardPointeTest extends TestCase
         ]);
 
         $auth = $this->client->authorize($request);
-        $cap = $this->client->capture($auth->retref);
+        $cap  = $this->client->capture($auth->retref);
 
         $this->assertInstanceOf(CaptureResponse::class, $cap);
         $this->assertTrue($cap->success(), $cap->toJSON());
@@ -140,7 +138,7 @@ class CardPointeTest extends TestCase
             'expiry'  => date('my', strtotime('next year')),
         ]);
 
-        $auth = $this->client->authorize($request);
+        $auth    = $this->client->authorize($request);
         $inquire = $this->client->inquire($auth->retref);
 
         $this->assertInstanceOf(InquireResponse::class, $inquire);
@@ -229,7 +227,7 @@ class CardPointeTest extends TestCase
             'amount'  => 500,
             'expiry'  => date('my', strtotime('next year')),
             'capture' => true,
-            'profile' => $res['profileid'] . '/' . $res['acctid'],
+            'profile' => $res['profileid'].'/'.$res['acctid'],
         ]);
 
         $res = $this->client->authorize($request);

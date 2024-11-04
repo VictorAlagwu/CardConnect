@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Victor\CardConnect\CardPointe;
+use VictorAlagwu\CardConnect\CardPointe;
 
 class AuthorizationRequest extends TestCase
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Victor\CardConnect\Responses;
+namespace VictorAlagwu\CardConnect\Responses;
 
-use Victor\CardConnect\Responses\Traits\ChecksSuccess;
-use Victor\CardConnect\Responses\Traits\ConvertsNumbers;
+use VictorAlagwu\CardConnect\Responses\Traits\ChecksSuccess;
+use VictorAlagwu\CardConnect\Responses\Traits\ConvertsNumbers;
 
 class Response extends Fluent
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Victor\CardConnect\Requests;
+namespace VictorAlagwu\CardConnect\Requests;
 
-use Victor\CardConnect\Fluent;
+use VictorAlagwu\CardConnect\Fluent;
 
 class Request extends Fluent
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Victor\CardConnect\Responses;
+namespace VictorAlagwu\CardConnect\Responses;
 
 class InquireResponse extends Response
 {

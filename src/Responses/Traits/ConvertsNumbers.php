@@ -1,6 +1,6 @@
 <?php
 
-namespace Victor\CardConnect\Responses\Traits;
+namespace VictorAlagwu\CardConnect\Responses\Traits;
 
 trait ConvertsNumbers
 {
