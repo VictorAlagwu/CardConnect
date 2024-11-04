@@ -1,6 +1,6 @@
 <?php
 
-namespace Victor\CardConnect\Exceptions;
+namespace VictorAlagwu\CardConnect\Exceptions;
 
 class CardConnectException extends \Exception
 {

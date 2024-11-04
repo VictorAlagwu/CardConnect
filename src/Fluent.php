@@ -1,6 +1,6 @@
 <?php
 
-namespace Victor\CardConnect;
+namespace VictorAlagwu\CardConnect;
 
 class Fluent implements \ArrayAccess, \JsonSerializable
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Victor\CardConnect\Responses;
+namespace VictorAlagwu\CardConnect\Responses;
 
 class Fluent implements \ArrayAccess, \JsonSerializable
 {
-        /**
+    /**
      * All of the attributes set on the container.
      *
      * @var array
@@ -32,9 +32,6 @@ class Fluent implements \ArrayAccess, \JsonSerializable
      * Get an attribute from the container.
      *
      * @param string $key
-     * @param mixed  $default
-     *
-     * @return mixed
      */
     public function get($key, $default = null)
     {
@@ -69,6 +66,7 @@ class Fluent implements \ArrayAccess, \JsonSerializable
                 if (is_bool($thing)) {
                     return true === $thing ? 'Y' : 'N';
                 }
+
                 // Allows 'Y' and 'N' too.
                 return $thing;
                 break;
@@ -122,8 +120,6 @@ class Fluent implements \ArrayAccess, \JsonSerializable
      * Determine if the given offset exists.
      *
      * @param string $offset
-     *
-     * @return bool
      */
     public function offsetExists(mixed $offset): bool
     {
@@ -134,8 +130,6 @@ class Fluent implements \ArrayAccess, \JsonSerializable
      * Get the value for a given offset.
      *
      * @param string $offset
-     *
-     * @return mixed
      */
     public function offsetGet(mixed $offset): mixed
     {
@@ -146,7 +140,6 @@ class Fluent implements \ArrayAccess, \JsonSerializable
      * Set the value at the given offset.
      *
      * @param string $offset
-     * @param mixed  $value
      */
     public function offsetSet(mixed $offset, mixed $value): void
     {
@@ -182,8 +175,6 @@ class Fluent implements \ArrayAccess, \JsonSerializable
      * Dynamically retrieve the value of an attribute.
      *
      * @param string $key
-     *
-     * @return mixed
      */
     public function __get($key)
     {
@@ -194,7 +185,6 @@ class Fluent implements \ArrayAccess, \JsonSerializable
      * Dynamically set the value of an attribute.
      *
      * @param string $key
-     * @param mixed  $value
      */
     public function __set($key, $value)
     {

@@ -1,19 +1,19 @@
 <?php
 
-namespace Victor\CardConnect;
+namespace VictorAlagwu\CardConnect;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
-use Victor\CardConnect\Exceptions\CardConnectException;
-use Victor\CardConnect\Requests\AuthorizationRequest;
-use Victor\CardConnect\Responses\AuthorizationResponse;
-use Victor\CardConnect\Responses\CaptureResponse;
-use Victor\CardConnect\Responses\InquireResponse;
-use Victor\CardConnect\Responses\RefundResponse;
-use Victor\CardConnect\Responses\Response;
-use Victor\CardConnect\Responses\SettlementResponse;
-use Victor\CardConnect\Responses\VoidResponse;
+use VictorAlagwu\CardConnect\Exceptions\CardConnectException;
+use VictorAlagwu\CardConnect\Requests\AuthorizationRequest;
+use VictorAlagwu\CardConnect\Responses\AuthorizationResponse;
+use VictorAlagwu\CardConnect\Responses\CaptureResponse;
+use VictorAlagwu\CardConnect\Responses\InquireResponse;
+use VictorAlagwu\CardConnect\Responses\RefundResponse;
+use VictorAlagwu\CardConnect\Responses\Response;
+use VictorAlagwu\CardConnect\Responses\SettlementResponse;
+use VictorAlagwu\CardConnect\Responses\VoidResponse;
 
 class CardPointe
 {

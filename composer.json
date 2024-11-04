@@ -1,11 +1,11 @@
 {
-    "name": "victor/cardconnect",
+    "name": "victoralagwu/cardconnect",
     "description": "PHP adapter for CardConnect CardPointe API",
     "keywords": [
         "cardconnect",
         "cardpointe"
     ],
-    "homepage": "https://github.com/Victor/CardConnect",
+    "homepage": "https://github.com/VictorAlagwu/CardConnect",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -18,7 +18,7 @@
             "homepage": "https://github.com/Dewbud/CardConnect/contributors"
         },
         {
-            "name": "Victor",
+            "name": "VictorAlagwu",
             "email": "victoralagwu@gmail.com"
         }
     ],
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Victor\\CardConnect\\": "src/"
+            "VictorAlagwu\\CardConnect\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Victor\\CardConnect\\Tests\\": "tests/"
+            "VictorAlagwu\\CardConnect\\Tests\\": "tests/"
         }
     },
     "require": {

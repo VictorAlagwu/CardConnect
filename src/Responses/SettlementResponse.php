@@ -1,6 +1,6 @@
 <?php
 
-namespace Victor\CardConnect\Responses;
+namespace VictorAlagwu\CardConnect\Responses;
 
 class SettlementResponse extends Response
 {
