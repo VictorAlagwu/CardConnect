@@ -1,6 +1,6 @@
 <?php
 
-namespace Dewbud\CardConnect\Responses;
+namespace Victor\CardConnect\Responses;
 
 class InquireResponse extends Response
 {

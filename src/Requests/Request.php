@@ -1,8 +1,8 @@
 <?php
 
-namespace Dewbud\CardConnect\Requests;
+namespace Victor\CardConnect\Requests;
 
-use Dewbud\CardConnect\Fluent;
+use Victor\CardConnect\Fluent;
 
 class Request extends Fluent
 {

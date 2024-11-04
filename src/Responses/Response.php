@@ -1,9 +1,9 @@
 <?php
 
-namespace Dewbud\CardConnect\Responses;
+namespace Victor\CardConnect\Responses;
 
-use Dewbud\CardConnect\Responses\Traits\ChecksSuccess;
-use Dewbud\CardConnect\Responses\Traits\ConvertsNumbers;
+use Victor\CardConnect\Responses\Traits\ChecksSuccess;
+use Victor\CardConnect\Responses\Traits\ConvertsNumbers;
 
 class Response extends Fluent
 {

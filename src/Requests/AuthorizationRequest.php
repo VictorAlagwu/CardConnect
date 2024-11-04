@@ -1,6 +1,6 @@
 <?php
 
-namespace Dewbud\CardConnect\Requests;
+namespace Victor\CardConnect\Requests;
 
 /**
  * @property string|null      $merchid   MerchantID

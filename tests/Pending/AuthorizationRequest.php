@@ -2,20 +2,17 @@
 
 namespace Tests;
 
-use Dewbud\CardConnect\CardPointe;
 use PHPUnit\Framework\TestCase;
+use Victor\CardConnect\CardPointe;
 
 class AuthorizationRequest extends TestCase
 {
-    const MERCHANT = '496160873888';
-    const USER     = 'testing';
-    const PASS     = 'testing123';
-    const SERVER   = 'https://fts-uat.cardconnect.com/';
+    public const MERCHANT = '496160873888';
+    public const USER     = 'testing';
+    public const PASS     = 'testing123';
+    public const SERVER   = 'https://fts-uat.cardconnect.com/';
 
-    /**
-     * @var \Dewbud\CardConnect\CardPointe
-     */
-    private $client;
+    private CardPointe $client; // Strict type declaration
 
     protected function setUp(): void
     {
@@ -28,10 +25,4 @@ class AuthorizationRequest extends TestCase
         unset($this->client);
         parent::tearDown();
     }
-
-    // /** @test */
-    // public function detectsValidCredentials()
-    // {
-    //     $this->assertTrue($this->client->testAuth());
-    // }
 }
