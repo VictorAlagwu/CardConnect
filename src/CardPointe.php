@@ -1,19 +1,19 @@
 <?php
 
-namespace Dewbud\CardConnect;
+namespace Victor\CardConnect;
 
-use Dewbud\CardConnect\Exceptions\CardConnectException;
-use Dewbud\CardConnect\Requests\AuthorizationRequest;
-use Dewbud\CardConnect\Responses\AuthorizationResponse;
-use Dewbud\CardConnect\Responses\CaptureResponse;
-use Dewbud\CardConnect\Responses\InquireResponse;
-use Dewbud\CardConnect\Responses\RefundResponse;
-use Dewbud\CardConnect\Responses\Response;
-use Dewbud\CardConnect\Responses\SettlementResponse;
-use Dewbud\CardConnect\Responses\VoidResponse;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use Victor\CardConnect\Exceptions\CardConnectException;
+use Victor\CardConnect\Requests\AuthorizationRequest;
+use Victor\CardConnect\Responses\AuthorizationResponse;
+use Victor\CardConnect\Responses\CaptureResponse;
+use Victor\CardConnect\Responses\InquireResponse;
+use Victor\CardConnect\Responses\RefundResponse;
+use Victor\CardConnect\Responses\Response;
+use Victor\CardConnect\Responses\SettlementResponse;
+use Victor\CardConnect\Responses\VoidResponse;
 
 class CardPointe
 {
@@ -22,21 +22,21 @@ class CardPointe
      *
      * @var string
      */
-    protected $merchant_id = null;
+    protected $merchant_id;
 
     /**
      * API username.
      *
      * @var string
      */
-    protected $user = null;
+    protected $user;
 
     /**
      * API password.
      *
      * @var string
      */
-    protected $password = null;
+    protected $password;
 
     /**
      * Servlet endpoint.
@@ -54,27 +54,27 @@ class CardPointe
      */
     protected $currency = 'USD';
 
-    const AUTH_TEXT       = 'CardConnect REST Servlet';
-    const NO_BATCHES_TEXT = 'Null batches';
-    const CLIENT_NAME     = 'PHP CARDCONNECT';
-    const CLIENT_VERSION  = '2.0.0';
+    public const AUTH_TEXT       = 'CardConnect REST Servlet';
+    public const NO_BATCHES_TEXT = 'Null batches';
+    public const CLIENT_NAME     = 'PHP CARDCONNECT';
+    public const CLIENT_VERSION  = '2.0.0';
 
     /**
      * Last request.
      *
      * @var array
      */
-    public $last_request = null;
+    public $last_request;
 
     /**
      * Last response.
      *
      * @var array
      */
-    public $last_response = null;
+    public $last_response;
 
     /**
-     * @var \GuzzleHttp\Client
+     * @var Client
      */
     protected $http;
 
@@ -137,7 +137,7 @@ class CardPointe
     /**
      * Get status of a transaction.
      *
-     * @return \Dewbud\CardConnect\Responses\Response
+     * @return Response
      */
     public function inquireMerchant()
     {
@@ -155,7 +155,7 @@ class CardPointe
     /**
      * Authorize a transaction.
      *
-     * @return \Dewbud\CardConnect\Responses\AuthorizationResponse|\Dewbud\CardConnect\Responses\CaptureResponse
+     * @return AuthorizationResponse|CaptureResponse
      */
     public function authorize(AuthorizationRequest $request)
     {
@@ -183,7 +183,7 @@ class CardPointe
      * @param string $retref  transaction id
      * @param array  $request request parameters
      *
-     * @return \Dewbud\CardConnect\Responses\CaptureResponse
+     * @return CaptureResponse
      */
     public function capture(string $retref, $request = [])
     {
@@ -207,7 +207,7 @@ class CardPointe
      * @param string $retref  transaction id
      * @param array  $request request parameters
      *
-     * @return \Dewbud\CardConnect\Responses\VoidResponse
+     * @return VoidResponse
      */
     public function void(string $retref, $request = [])
     {
@@ -230,7 +230,7 @@ class CardPointe
      *
      * @param array $request request parameters
      *
-     * @return \Dewbud\CardConnect\Responses\RefundResponse
+     * @return RefundResponse
      */
     public function refund($request = [])
     {
@@ -252,7 +252,7 @@ class CardPointe
      *
      * @param array $retref transaction id
      *
-     * @return \Dewbud\CardConnect\Responses\InquireResponse
+     * @return InquireResponse
      */
     public function inquire(string $retref)
     {
@@ -375,7 +375,7 @@ class CardPointe
      * @param array  $request  Request Data
      * @param array  $options  Guzzle Options
      *
-     * @return \GuzzleHttp\Psr7\Response
+     * @return GuzzleResponse
      */
     protected function send($verb, $resource, $request = [], $options = [])
     {

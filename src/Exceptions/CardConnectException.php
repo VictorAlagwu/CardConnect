@@ -1,10 +1,10 @@
 <?php
 
-namespace Dewbud\CardConnect\Exceptions;
+namespace Victor\CardConnect\Exceptions;
 
 class CardConnectException extends \Exception
 {
-    public $response = null;
+    public $response;
 
     public function __construct($response)
     {

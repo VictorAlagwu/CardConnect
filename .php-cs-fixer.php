@@ -1,6 +1,9 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+$finder = Finder::create()
     ->notPath('vendor')
     ->in(__DIR__)
     ->name('*.php')
@@ -10,12 +13,14 @@ $finder = PhpCsFixer\Finder::create()
 $rules = [
     '@Symfony' => true,
     'binary_operator_spaces' => [
-        'align_double_arrow' => true,
-        'align_equals' => true,
+        'operators' => [
+            '=>' => 'align',
+            '=' => 'align',
+        ],
     ],
 ];
 
-return PhpCsFixer\Config::create()
+return (new Config())
     ->setRules($rules)
     ->setFinder($finder)
     ->setUsingCache(true);

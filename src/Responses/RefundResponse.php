@@ -1,6 +1,6 @@
 <?php
 
-namespace Dewbud\CardConnect\Responses;
+namespace Victor\CardConnect\Responses;
 
 class RefundResponse extends Response
 {
