@@ -16,6 +16,10 @@
         {
             "name": "Contributors",
             "homepage": "https://github.com/Dewbud/CardConnect/contributors"
+        },
+        {
+            "name": "Victor",
+            "email": "victoralagwu@gmail.com"
         }
     ],
     "scripts": {
